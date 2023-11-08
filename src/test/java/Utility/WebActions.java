@@ -14,7 +14,7 @@ public class WebActions extends BaseTest {
     public void clickElement(By selector){
         driver.findElement(selector).click();
     }
-
+    //testing my commit
     public void type(By selector, String text){
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).sendKeys(text);
