@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
@@ -21,6 +22,7 @@ public class BaseTest {
     public static WebDriver driver;
 
     public static WebDriverWait wait;
+    protected Actions actions;
     public static Properties prop = new Properties();
     public static Properties loc = new Properties();
     public static FileInputStream fr;
@@ -48,6 +50,7 @@ public class BaseTest {
         }
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        actions = new Actions(driver);
         driver.get(prop.getProperty("testurl"));
     }
 
